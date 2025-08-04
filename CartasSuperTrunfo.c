@@ -8,6 +8,8 @@ int main(){
     float area, area2;
     float pib, pib2;
     int pontosturisticos, pontosturisticos2;  
+    float superpoder, superpoder2;
+
 
     printf("Digite o nome do estado 01: \n");
     scanf("%s", &estado);
@@ -39,6 +41,7 @@ int main(){
     printf("Digite o PIB 02: \n");
     scanf("%f", &pib2);
 
+    //Carta N1
     printf("Carta N1\n");
     printf("Estado: %s\n", estado);
     printf("Nome cidade: %s\n", nomecidade);
@@ -46,7 +49,11 @@ int main(){
     printf("Area : %.2fkm²\n", area);
     printf("PIB : %.3f\n", pib);
     printf("Numero de pontos turisticos : %d\n", pontosturisticos);
+    printf("Densidade populacional: %.2f\n", (float) area / populacao);
+    printf("PIB per capita: %.2f\n", (float) pib / populacao);
+    printf("SuperPoder: %.2f\n", (float) populacao + pontosturisticos + area + pib + (area / populacao) + (pib / populacao / 1));
     
+    //CartaN2
     printf("Carta N2\n");
     printf("Estado: %s\n", estado2);
     printf("Nome cidade: %s\n", nomecidade2);
@@ -54,7 +61,43 @@ int main(){
     printf("Area: %.2fkm²\n", area2);
     printf("PIB: %.3f\n", pib2);
     printf("Numero de pontos turisticos: %d\n", pontosturisticos2);
+    printf("Densidade populacional: %.2f\n", (float) area2 / populacao2);
+    printf("PIB per capita: %.2f\n", (float) pib2 / populacao2);
+    printf("SuperPoder: %.2f\n", (float) populacao2 + pontosturisticos2 + area2 + pib2 + (area2 / populacao2) + (pib2 / populacao2 / 1));
+    
+    
+    // resultado das cartas
+    printf("Resultado das cartas\n");
+    printf("Resultado Populacao: %d\n", 
+         populacao > populacao2,
+         populacao < populacao2);
 
+    printf("Resultado Area: %d\n", 
+         area > area2,
+         area < area2);
 
+    printf("Resultado PIB: %d\n", 
+         pib > pib2,
+         pib < pib2);    
+
+    printf("Resultado Pontos Turisticos: %d\n", 
+         pontosturisticos > pontosturisticos2,
+         pontosturisticos < pontosturisticos2);
+
+    printf("Resultado Densidade Populacional: %d\n", 
+         area / populacao > area2 / populacao2,
+         area / populacao < area2 / populacao2);
+
+    printf("Resultado PIB per capita: %d\n", 
+         pib / populacao > pib2 / populacao2,
+         pib / populacao < pib2 / populacao2);
+
+    printf("Resultado SuperPoder: %d\n", 
+         populacao + pontosturisticos + area + pib + (area / populacao) + (pib / populacao / 1) > populacao2 + pontosturisticos2 + area2 + pib2 + (area2 / populacao2) + (pib2 / populacao2 / 1),
+         populacao + pontosturisticos + area + pib + (area / populacao) + (pib / populacao / 1) < populacao2 + pontosturisticos2 + area2 + pib2 + (area2 / populacao2) + (pib2 / populacao2 / 1));
+         
+
+             
+           
     return 0;
 }
