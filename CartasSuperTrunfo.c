@@ -4,27 +4,28 @@ int main(){
 
     char estado[25], estado2[25];
     char nomecidade[25], nomecidade2[25];
-    int populacao, populacao2;  
+    unsigned long int populacao, populacao2;  
     float area, area2;
     float pib, pib2;
     int pontosturisticos, pontosturisticos2;  
     float superpoder, superpoder2;
-
+     float densidade_pop_c1 = (float)area / populacao;
+     float densidade_pop_c2 = (float)area / populacao2;
 
     printf("Digite o nome do estado 01: \n");
-    scanf("%s", &estado);
+    scanf("%s", estado);
     printf("Digite o nome do estado 02: \n");
-    scanf("%s", &estado2);
+    scanf("%s", estado2);
     
     printf("Digite o nome da cidade 01: \n");
-    scanf("%s", &nomecidade);
+    scanf("%s", nomecidade);
     printf("Digite o nome da cidade 02: \n");
-    scanf("%s", &nomecidade2);
+    scanf("%s", nomecidade2);
 
     printf("Digite a populacao 01: \n");
-    scanf("%d", &populacao);
+    scanf("%lu", &populacao);
     printf("Digite a populacao 02: \n");
-    scanf("%d", &populacao2);
+    scanf("%lu", &populacao2);
 
     printf("Digite número de pontos turisticos 01: \n");
     scanf("%d", &pontosturisticos);
@@ -45,25 +46,25 @@ int main(){
     printf("Carta N1\n");
     printf("Estado: %s\n", estado);
     printf("Nome cidade: %s\n", nomecidade);
-    printf("Populacao carta : %d\n",populacao);
+    printf("Populacao carta : %lu\n",populacao);
     printf("Area : %.2fkm²\n", area);
     printf("PIB : %.3f\n", pib);
     printf("Numero de pontos turisticos : %d\n", pontosturisticos);
     printf("Densidade populacional: %.2f\n", (float) area / populacao);
     printf("PIB per capita: %.2f\n", (float) pib / populacao);
-    printf("SuperPoder: %.2f\n", (float) populacao + pontosturisticos + area + pib + (area / populacao) + (pib / populacao / 1));
+    printf("SuperPoder: %.2f\n", (float) populacao + pontosturisticos + area + pib + (1.0f / densidade_pop_c1) + (pib / populacao / 1));
     
     //CartaN2
     printf("Carta N2\n");
     printf("Estado: %s\n", estado2);
     printf("Nome cidade: %s\n", nomecidade2);
-    printf("Populacao: %d\n",populacao2);
+    printf("Populacao: %lu\n",populacao2);
     printf("Area: %.2fkm²\n", area2);
     printf("PIB: %.3f\n", pib2);
     printf("Numero de pontos turisticos: %d\n", pontosturisticos2);
     printf("Densidade populacional: %.2f\n", (float) area2 / populacao2);
     printf("PIB per capita: %.2f\n", (float) pib2 / populacao2);
-    printf("SuperPoder: %.2f\n", (float) populacao2 + pontosturisticos2 + area2 + pib2 + (area2 / populacao2) + (pib2 / populacao2 / 1));
+    printf("SuperPoder: %.2f\n", (float) populacao2 + pontosturisticos2 + area2 + pib2 + (1.0f / densidade_pop_c2) + (pib2 / populacao2 / 1));
     
     
     // resultado das cartas
